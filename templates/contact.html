@@ -1,0 +1,50 @@
+<!-- 
+<div class="container" method="POST">
+  <h2>Contact Me</h2>
+  <form id="contactForm">
+    <div class="input-group">
+      <input type="text" id="name" placeholder="Your Name" required />
+    </div>
+    <div class="input-group">
+      <input type="email" id="email" placeholder="Your Email" required />
+    </div>
+    <div class="input-group">
+      <textarea id="message" placeholder="Your Message" required></textarea>
+    </div>
+    <div class="g-recaptcha" data-sitekey="ACTUAL_RECAPTCHA_SITE_KEY"></div>
+    <br />
+    <button type="submit" class="submit-btn">Send Message</button>
+  </form>
+</div>
+
+ -->
+{% extends 'base.html' %} {% block title %}Contact{% endblock %} {% block
+content %}
+<div class="container">
+  <h2>Contact Me</h2>
+  <form id="contactForm" method="POST" action="{{ url_for('contact') }}">
+    {{ form.hidden_tag() }}
+    <!-- CSRF Protection -->
+
+    <div class="input-group">
+      {{ form.name(class="form-control", placeholder="Your Name") }}
+    </div>
+
+    <div class="input-group">
+      {{ form.email(class="form-control", placeholder="Your Email") }}
+    </div>
+
+    <div class="input-group">
+      {{ form.message(class="form-control", placeholder="Your Message") }}
+    </div>
+
+    <div
+      class="g-recaptcha"
+      data-sitekey="{{ config['RECAPTCHA_PUBLIC_KEY'] }}"
+    ></div>
+    <br />
+
+    <button type="submit" class="submit-btn">Send Message</button>
+  </form>
+</div>
+{% endblock %}

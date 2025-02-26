@@ -1,0 +1,61 @@
+{% extends 'base.html' %} {% block title %}About Me{% endblock %} {% block
+content %}
+
+<div class="container">
+  <!-- Left Section -->
+  <div class="left-section">
+    <h2>Read About Me</h2>
+    <p class="summary">
+      Motivated Python Developer with a strong foundation in software
+      engineering and a passion for web development using Flask and Django.
+      Proficient in Python, including object-oriented programming (OOP), data
+      structures, REST APIs, and Git. Recent Computer Science graduate with
+      hands-on experience in building full-stack applications.
+    </p>
+
+    <!-- Achievements Section -->
+    <div class="achievements">
+      <h3>Achievements & Certifications</h3>
+      <ul id="achievementList">
+        <li>
+          python fundementals
+          <button onclick="removeAchievement(this)">Remove</button>
+        </li>
+        <li>
+          java fundementals
+          <button onclick="removeAchievement(this)">Remove</button>
+        </li>
+      </ul>
+      <span class="add-achievement" onclick="addAchievement()">+ Add New</span>
+    </div>
+
+    <!-- Social Links -->
+    <div class="social-links">
+      <h3>Connect with Me</h3>
+      <a href="https://www.linkedin.com/in/sachinbodke432/" id="linkedin"
+        ><i class="fab fa-linkedin"></i
+      ></a>
+      <a href="https://github.com/BodkeSachin7979" id="github"
+        ><i class="fab fa-github"></i
+      ></a>
+    </div>
+  </div>
+
+  <!-- Right Section (Profile Picture) -->
+  <div class="right-section">
+    <img
+      src="{{ url_for('static', filename='images/selfimage.png') }}"
+      alt="Profile Picture"
+      class="profile-pic"
+      id="profilePic"
+    />
+    <input type="file" id="uploadProfile" hidden />
+    <span
+      class="upload-btn"
+      onclick="document.getElementById('uploadProfile').click()"
+      >Upload New Picture</span
+    >
+  </div>
+</div>
+
+{% endblock %}

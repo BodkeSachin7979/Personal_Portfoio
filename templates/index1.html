@@ -1,0 +1,109 @@
+{% extends 'base.html' %} {% block title %}Home - My Portfolio{% endblock %} {%
+block content %}
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="content">
+    <h3>WELCOME!</h3>
+    <h1>I Am <span class="highlight">Bodke Sachin</span></h1>
+    <p>
+      Tech-driven Python Developer with a knack for problem-solving and
+      full-stack development. Ready to innovate and grow.
+    </p>
+    <!-- Element to contain animated typing -->
+    <p>known technologies <span id="element"></span></p>
+    <a
+      href="{{ url_for('static', filename='images/BODKE_SACHIN.pdf') }}"
+      download="MyPortfolio.pdf"
+    >
+      <button class="hero_button">Download CV</button>
+    </a>
+
+    <!-- Social Icons -->
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/sachinbodke432/"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+      <a href="https://github.com/BodkeSachin7979"
+        ><i class="fab fa-github"></i
+      ></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+  </div>
+
+  <!-- Profile Image -->
+  <div class="image-container">
+    <img
+      src="{{ url_for('static', filename='images/selfimage.png') }}"
+      alt="Web Designer"
+    />
+  </div>
+</section>
+
+<!-- skills section -->
+<section class="services-section">
+  <div class="services-content">
+    <h2>I CAN HELP YOU WITH...</h2>
+    <p>
+      I offer a comprehensive suite of digital design services tailored to meet
+      the unique needs of each client:
+    </p>
+    <ul class="services-list">
+      <li onclick="toggleDetails('fullstack')">
+        <i class="fas fa-laptop-code"></i> Full-Stack Development
+        <p id="fullstack" class="service-details">
+          HTML5,CSS3,Bootstrap / Tailwind CSS,JavaScript (ES6+),Python,Flask
+          ,Django ,MySQL,MongoDB,SQLAlchemy,Django ORM,RESTful APIs,Git, GitHub,
+        </p>
+      </li>
+      <li onclick="toggleDetails('uiux')">
+        <i class="fas fa-paint-brush"></i> UI/UX Design
+        <p id="uiux" class="service-details">Figma, Adobe Photoshop,canvas</p>
+      </li>
+      <li onclick="toggleDetails('ai')">
+        <i class="fas fa-brain"></i> AI Solutions
+        <p id="ai" class="service-details">
+          Python, Machine Learning, NLP, TensorFlow, PyTorch,OPENCV
+        </p>
+      </li>
+    </ul>
+    <button class="skills-button">
+      <a href="{{url_for('skills')}}">See My Skills</a>
+    </button>
+  </div>
+</section>
+
+<section class="projects">
+  <h2>Recent Projects</h2>
+  <div class="projects-grid" id="projects-container">
+    <div class="project-card zoom-in">
+      <img
+        src="{{ url_for('static', filename='images/packyourbags.png') }}"
+        alt="Project Image"
+      />
+      <h3>Tourister Guide</h3>
+      <p>Pack Your Bags is a travel guide website</p>
+      <a href="https://github.com/BodkeSachin7979/Pack_your_Bags"
+        >View Project</a
+      >
+      <button class="remove-btn" onclick="removeProject(this)">X</button>
+    </div>
+    <div class="project-card zoom-in">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf6zoRR_FPG7f2knECoYTgOuETejMYPg71vg&s"
+        alt="Project Image"
+      />
+      <h3>Liver Cancer Detection</h3>
+      <p>
+        Developed a GAN-based system improving CT scan quality for liver cancer
+        detection.
+      </p>
+      <a href="https://github.com/BodkeSachin7979/LCS_GAN">View Project</a>
+      <button class="remove-btn" onclick="removeProject(this)">X</button>
+    </div>
+  </div>
+  <button class="add-project" onclick="addProject()">+ Add Project</button>
+</section>
+
+{% endblock %}

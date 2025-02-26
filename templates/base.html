@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}My Portfolio{% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- css link Content -->
+    <link rel="stylesheet" type="text/css " href="/css/index1.css" />
+    <link rel="stylesheet" type="text/css " href="/css/base.css" />
+    <link rel="stylesheet" type="text/css " href="/css/about.css" />
+    <link rel="stylesheet" type="text/css " href="/css/contact.css" />
+    <link rel="stylesheet" type="text/css " href="/css/skills.css" />
+    <link rel="stylesheet" type="text/css " href="/css/project.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo"><span>Bodke Sachin</span></div>
+      <ul id="nav-menu">
+        <li><a href="{{url_for('home')}}">Home</a></li>
+        <li>
+          <a href="{{url_for('about')}}">About Me</a>
+        </li>
+        <li>
+          <a href="{{url_for('skills')}}">Skills</a>
+        </li>
+        <li>
+          <a href="{{url_for('project')}}">Projects</a>
+        </li>
+        <li>
+          <a href="{{url_for('contact')}}">Contact</a>
+        </li>
+      </ul>
+      <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+    </nav>
+
+    <!-- Dynamic Content -->
+    {% block content %} {% endblock %}
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo">Bodke Sachin</div>
+        <ul class="footer-menu">
+          <li><a href="{{url_for('home')}}">Home</a></li>
+          <li><a href="{{url_for('about')}}">About Me</a></li>
+          <li><a href="{{url_for('skills')}}">Skills</a></li>
+          <li><a href="{{url_for('project')}}">Projects</a></li>
+          <li><a href="{{url_for('contact')}}">Contact</a></li>
+        </ul>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/sachinbodke432/"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="https://github.com/BodkeSachin7979"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p class="footer-text">
+          &copy; 2025 Bodke Sachin. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- cdn for typed.js -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- java script link Content -->
+    <script src="/js/index1.js"></script>
+    <script src="/js/base.js"></script>
+    <script src="/js/about.js"></script>
+    <script src="/js/contact.js"></script>
+    <script src="/js/project.js"></script>
+    <script src="/js/skills.js"></script>
+  </body>
+</html>

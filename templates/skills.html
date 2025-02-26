@@ -1,0 +1,73 @@
+{% extends 'base.html' %} {% block title %}Skills{% endblock %} {% block content
+%}
+<div class="container">
+  <h2>Skills and Technologies</h2>
+
+  <div id="categories">
+    <div class="category">
+      <h3>
+        Languages and Databases
+        <span
+          class="remove-category"
+          onclick="this.parentElement.parentElement.remove()"
+          >&times;</span
+        >
+      </h3>
+      <button class="add-skill-btn" onclick="addSkill(this)">
+        + Add Skill
+      </button>
+      <div class="skill-list">
+        <span class="skill-item">Python</span>
+        <span class="skill-item">MySQL</span>
+        <span class="skill-item">PostgreSQL</span>
+        <span class="skill-item">SQLAlchemy</span>
+        <span class="skill-item">MongoDB</span>
+      </div>
+    </div>
+
+    <div class="category">
+      <h3>
+        Web Technologies
+        <span
+          class="remove-category"
+          onclick="this.parentElement.parentElement.remove()"
+          >&times;</span
+        >
+      </h3>
+      <button class="add-skill-btn" onclick="addSkill(this)">
+        + Add Skill
+      </button>
+      <div class="skill-list">
+        <span class="skill-item">HTML/CSS</span>
+        <span class="skill-item">JavaScript</span>
+        <span class="skill-item">React.js</span>
+        <span class="skill-item">Flask</span>
+        <span class="skill-item">Django</span>
+        <span class="skill-item">RESTful API's</span>
+      </div>
+    </div>
+    <div class="category">
+      <h3>
+        AI Solutions
+        <span
+          class="remove-category"
+          onclick="this.parentElement.parentElement.remove()"
+          >&times;</span
+        >
+      </h3>
+      <button class="add-skill-btn" onclick="addSkill(this)">
+        + Add Skill
+      </button>
+      <div class="skill-list">
+        <span class="skill-item">ML</span>
+        <span class="skill-item">NLP</span>
+        <span class="skill-item">TensprFlow</span>
+        <span class="skill-item">PyTorch</span>
+        <span class="skill-item">matplot</span>
+        <span class="skill-item">pands</span>
+        <span class="skill-item">numpy</span>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

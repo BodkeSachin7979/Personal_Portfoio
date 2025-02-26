@@ -1,0 +1,45 @@
+{% extends 'base.html' %} {% block title %}Projects{% endblock %} {% block
+content %}
+<div class="container">
+  <h2>My Projects</h2>
+
+  <!-- Projects List -->
+  <div id="projectList">
+    <!-- Sample Project Card -->
+    <div class="project-card" data-tech="Python Flask">
+      <div class="project-title">Tourister Guide</div>
+      <div class="project-description">
+        Pack Your Bags is a travel guide website
+      </div>
+      <div class="project-tech">Tech Stack: HTML, CSS, JavaScript</div>
+      <div class="project-links">
+        <a href="https://github.com/BodkeSachin7979/Pack_your_Bags"
+          ><i class="fas fa-external-link-alt"></i> Live Demo</a
+        >
+        <a
+          href="https://github.com/BodkeSachin7979/Pack_your_Bags"
+          target="_blank"
+          ><i class="fab fa-github"></i> GitHub</a
+        >
+      </div>
+    </div>
+
+    <div class="project-card" data-tech="JavaScript React">
+      <div class="project-title">Liver Cancer Detection</div>
+      <div class="project-description">
+        Developed a GAN-based system improving CT scan quality for liver cancer
+        detection.
+      </div>
+      <div class="project-tech">
+        Tech Stack: HTML,CSS,Tensorflow,CNN,ML,FLASk
+      </div>
+      <div class="project-links">
+        <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+        <a href="https://github.com/BodkeSachin7979/LCS_GAN" target="_blank"
+          ><i class="fab fa-github"></i> GitHub</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
